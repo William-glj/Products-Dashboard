@@ -12,32 +12,33 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsersJPA {
-/*
-CREATE TABLE users
-id_user INT AUTO_INCREMENT PRIMARY KEY,
-first_name VARCHAR(60) NOT NULL DEFAULT 'Nombre',
-last_name VARCHAR(60) NOT NULL DEFAULT 'Apellido',
-company_mail VARCHAR(255) UNIQUE NOT NULL,
-age INT NOT NULL,
-rol ENUM('Invitado', 'Usuario', 'Administrador') DEFAULT 'Usuario',
-psswrd VARCHAR(500),
-mobile INT
-*/
+
+    /*
+    Está mal nombrar a las instancias  de esta forma: first_name.
+    Lo habitual sería seguir la convención firstName. En mi caso
+    al menos en esta clase lo dejo de esta manera para ahorrar líneas de código
+    en algo repetitivo.
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_user;
 
-    // @Column(name ="FirstName", length = 60)
-    // Nos saltamos la colocación de columnas al llamarlas igual que en MySQL.
+    @Column(name ="first_name", length = 60)
     private String first_name;
+    @Column(length = 60)
     private String last_name;
+
     private String company_mail;
+
     private int age;
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
+    @Column(length = 500)
     private  String psswrd;
+
     private  Integer mobile;
 
     public Integer getId_user() {

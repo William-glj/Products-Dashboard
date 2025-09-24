@@ -51,7 +51,6 @@ category ENUM('Ninguna','Electrónica','Ropa','Libros') DEFAULT 'Ninguna'
 );
 
 
-
 DROP TABLE IF EXISTS picture;
 CREATE TABLE picture(
 isbn_picture BIGINT PRIMARY KEY,
@@ -82,12 +81,11 @@ FOREIGN KEY (isbn_stock) REFERENCES products(isbn)
 
 
 
-
 DROP TABLE IF EXISTS providers;
 CREATE TABLE providers (
 id INT AUTO_INCREMENT PRIMARY KEY,
-nickname VARCHAR(200),
-mail VARCHAR(255),
+nickname VARCHAR(80),
+mail VARCHAR(200) UNIQUE,
 phone VARCHAR(40),
 address VARCHAR(255)
 );

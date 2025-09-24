@@ -14,14 +14,7 @@ import org.hibernate.annotations.Type;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductsJPA {
-/*
-CREATE TABLE products (
-isbn BIGINT PRIMARY KEY,
-product_name VARCHAR(200) NOT NULL DEFAULT 'Nombre',
-information TEXT,
-category ENUM('Ninguna','Electrónica','Ropa','Libros') DEFAULT 'Ninguna'
-);
-*/
+
     @Id
     private Integer isbn;
 
