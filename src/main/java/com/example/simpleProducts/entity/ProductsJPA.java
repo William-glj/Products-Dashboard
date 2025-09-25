@@ -16,7 +16,7 @@ import org.hibernate.annotations.Type;
 public class ProductsJPA {
 
     @Id
-    private Integer isbn;
+    private Long isbn;
 
     private String product_name;
     private String information;
@@ -24,10 +24,10 @@ public class ProductsJPA {
     @Enumerated(EnumType.STRING)
     private Category category;
 
-    public Integer getIsbn() {
+    public Long getIsbn() {
         return isbn;
     }
-    public void setIsbn(Integer isbn) {
+    public void setIsbn(Long isbn) {
         this.isbn = isbn;
     }
     public String getProduct_name() {

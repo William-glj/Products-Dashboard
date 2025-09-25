@@ -54,7 +54,7 @@ category ENUM('Ninguna','Electrónica','Ropa','Libros') DEFAULT 'Ninguna'
 DROP TABLE IF EXISTS picture;
 CREATE TABLE picture(
 isbn_picture BIGINT PRIMARY KEY,
-image BINARY NOT NULL,
+image VARBINARY(1000) NOT NULL,
 FOREIGN KEY (isbn_picture) REFERENCES products(isbn)
 );
 
